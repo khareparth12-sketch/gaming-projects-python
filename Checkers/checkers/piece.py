@@ -1,0 +1,40 @@
+from .constant import WHITE, BLACK, CELL, GREY, CROWN
+import pygame
+
+class Piece:
+    PADDING = 10
+    OUTLINE = 2
+
+    def __init__(self, row, col, color):
+        self.row = row
+        self.col = col
+        self.color = color
+        self.king = False
+
+        if self.color == WHITE:
+            self.direction = 1
+        else:
+            self.direction = -1
+
+        self.x = 0
+        self.y = 0
+        self.calc_pos()
+
+    def calc_pos(self):
+        self.x = CELL*self.col + CELL//2
+        self.y = CELL*self.row + CELL//2
+
+    def make_king(self):
+        self.king = True
+
+    def draw(self, win):
+        radius = CELL//2 - self.PADDING
+        pygame.draw.circle(win, GREY, (self.x, self.y), radius+self.OUTLINE)
+        pygame.draw.circle(win, self.color, (self.x, self.y), radius)
+
+        if self.king:
+            win.blit(CROWN, (self.x - CROWN.get_width()//2, self.y - CROWN.get_height()//2))
+
+    def __repr__(self):
+        return str(self.color)
+
