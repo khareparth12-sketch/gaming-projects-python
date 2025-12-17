@@ -1,4 +1,4 @@
-from .constant import WHITE, BLACK, CELL, GREY, CROWN
+from .constant import    CELL, GREY, CROWN
 import pygame
 
 class Piece:
@@ -10,12 +10,6 @@ class Piece:
         self.col = col
         self.color = color
         self.king = False
-
-        if self.color == WHITE:
-            self.direction = 1
-        else:
-            self.direction = -1
-
         self.x = 0
         self.y = 0
         self.calc_pos()
@@ -34,6 +28,11 @@ class Piece:
 
         if self.king:
             win.blit(CROWN, (self.x - CROWN.get_width()//2, self.y - CROWN.get_height()//2))
+
+    def move(self, row, col):
+        self.row = row
+        self.col = col
+        self.calc_pos()
 
     def __repr__(self):
         return str(self.color)
