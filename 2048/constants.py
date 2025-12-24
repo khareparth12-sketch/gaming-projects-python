@@ -1,0 +1,17 @@
+import pygame
+
+FPS = 60
+WINDOW_SIZE = (700, 700)
+ROW = 4
+COL = 4
+
+CELL_HEIGHT = WINDOW_SIZE[0] // COL
+CELL_WIDTH = WINDOW_SIZE[1] // ROW
+
+BORDER_COLOR = (187, 173, 160)
+BORDER = 10
+BACKGROUND_COLOR = (250, 248, 239)
+FONT_COLOR = (119, 110, 101)
+
+MOVE_VEL = 20
+FONT = pygame.font.SysFont("Times New Roman", 50, bold=True)

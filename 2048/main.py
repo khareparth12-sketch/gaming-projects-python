@@ -1,20 +1,13 @@
 import pygame
+import random
+import math
+from .constants import *
 
 def main():
     pygame.init()
-    screen = pygame.display.set_mode((400, 400))
+
+    WIN = pygame.display.set_mode(WINDOW_SIZE[0], WINDOW_SIZE[1])
     pygame.display.set_caption("2048 Game")
-
-    running = True
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-
-        screen.fill((255, 255, 255))
-        pygame.display.flip()
-
-    pygame.quit()
 
 if __name__ == "__main__":
     main()
