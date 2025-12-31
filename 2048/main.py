@@ -21,7 +21,7 @@ MOVE_VEL = 20
 FONT = pygame.font.SysFont("comicsans", 50, bold=True)
 
 WIN = pygame.display.set_mode((WIDTH, HIEGHT))
-pygame.display.set_caption("2048 Game")
+pygame.display.set_caption("Welcome to 2048 Game")
 
 def main(WIN):
     clock = pygame.time.Clock()
